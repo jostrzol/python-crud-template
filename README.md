@@ -2,10 +2,18 @@
 
 A simple CRUD template based on FastAPI and SQLAlchemy.
 
+# Configuration
+
+Create a `.env` file:
+
+```sh
+DATABASE__CONNECTION_STRING = "postgresql://postgres@localhost/notes"
+```
 
 # Usage
 
 To start the server run
+
 ```sh
-uvicorn main:app --reload --app-dir ./src/main
+uvicorn src.main.main:app --reload
 ```

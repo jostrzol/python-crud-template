@@ -1,5 +1,8 @@
 from fastapi import FastAPI, status
 
+from src.main.database.database import engine
+
+
 app = FastAPI()
 
 
