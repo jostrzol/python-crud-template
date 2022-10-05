@@ -1,6 +1,10 @@
-from pydantic import BaseSettings
+from pydantic import BaseSettings, BaseModel, PostgresDsn
 
-from src.main.database.settings import DatabaseSettings
+
+class DatabaseSettings(BaseModel):
+    url: PostgresDsn
+    echo: bool = False
+    wipe: bool = False
 
 
 class Settings(BaseSettings):
@@ -9,4 +13,3 @@ class Settings(BaseSettings):
     class Config:
         env_file = ".env"
         env_nested_delimiter = "__"
-
