@@ -1,28 +1,28 @@
 from typing import List
 
-from fastapi import APIRouter, Depends, status, Response
-from dependency_injector.wiring import inject, Provide
+from dependency_injector.wiring import Provide, inject
+from fastapi import APIRouter, Depends, Response, status
 
-from .schemas import NoteResponse, NoteRequest, MessageResponse, error_message_response
 from .containers import Container
+from .repositories import DuplicateTitleError, NoteNotFoundError
+from .schemas import MessageResponse, NoteRequest, NoteResponse, error_message_response
 from .services import NoteService
-from .repositories import NoteNotFoundError, DuplicateTitleError
 
 
 router = APIRouter()
 
 BAD_NOTE_REQUEST_ERROR_RESP = {
-        400: {
-            "description": "Bad note request",
-            "model": MessageResponse
-        }
+    400: {
+        "description": "Bad note request",
+        "model": MessageResponse
+    }
 }
 
 NOTE_NOT_FOUND_ERROR_RESP = {
-        404: {
-            "description": "Note note found",
-            "model": MessageResponse
-        }
+    404: {
+        "description": "Note note found",
+        "model": MessageResponse
+    }
 }
 
 

@@ -1,8 +1,8 @@
 from typing import List
 
-from .schemas import NoteResponse, NoteRequest
+from .mappings import note_model_to_response, note_request_to_model
 from .repositories import NoteRepository
-from .mappings import note_request_to_model, note_model_to_response
+from .schemas import NoteRequest, NoteResponse
 
 
 class NoteService:

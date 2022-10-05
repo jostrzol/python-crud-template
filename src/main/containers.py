@@ -1,13 +1,11 @@
-from dependency_injector.containers import (
-      DeclarativeContainer, WiringConfiguration
-)
-from dependency_injector.providers import Singleton, Configuration, Factory
+from dependency_injector.containers import DeclarativeContainer, WiringConfiguration
+from dependency_injector.providers import Configuration, Factory, Singleton
 
 from . import endpoints
-from .settings import Settings
 from .database import Database
 from .repositories import NoteRepository
 from .services import NoteService
+from .settings import Settings
 
 
 class Container(DeclarativeContainer):

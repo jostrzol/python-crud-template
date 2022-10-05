@@ -3,8 +3,8 @@ import logging
 import coloredlogs
 from fastapi import FastAPI
 
-from .endpoints import router
 from .containers import Container
+from .endpoints import router
 
 
 logger = logging.getLogger(__package__)

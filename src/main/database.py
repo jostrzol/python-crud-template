@@ -1,5 +1,5 @@
-import logging
 from contextlib import contextmanager
+import logging
 from typing import Callable, Iterable
 
 from sqlalchemy import create_engine
@@ -17,8 +17,8 @@ class Database:
 
     def __init__(self, url: str, echo: bool) -> None:
         self._engine = create_engine(
-                url=url,
-                echo=echo,
+            url=url,
+            echo=echo,
         )
         self._session_factory: Callable[..., Session] = scoped_session(
             sessionmaker(
