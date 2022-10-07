@@ -7,7 +7,7 @@ A simple CRUD template based on FastAPI and SQLAlchemy.
 Create a `.env` file:
 
 ```sh
-DATABASE__CONNECTION_STRING = "postgresql://postgres@localhost/notes"
+DATABASE__URL = "postgresql://postgres@localhost/notes"
 ```
 
 # Usage
