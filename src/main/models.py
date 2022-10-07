@@ -7,6 +7,6 @@ Base = declarative_base()
 
 class Note(Base):
     __tablename__ = "notes"
-    note_id = Column(INTEGER, primary_key=True)
-    title = Column(VARCHAR(64), unique=True)
-    content = Column(TEXT)
+    note_id: int = Column(INTEGER, primary_key=True)    # type: ignore
+    title: str = Column(VARCHAR(64), unique=True)       # type: ignore
+    content: str = Column(TEXT)                         # type: ignore

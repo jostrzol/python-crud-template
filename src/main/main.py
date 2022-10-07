@@ -17,8 +17,9 @@ coloredlogs.install(
 
 container = Container()
 
-container.database().create_database(wipe=container.config.database.wipe)
+container.database().create_database(
+    wipe=container.config.database.wipe  # type: ignore
+)
 
 app = FastAPI()
-app.container = container
 app.include_router(router)

@@ -20,7 +20,7 @@ class MessageResponse(BaseModel):
 def error_message_response(
     exception: Exception,
     status: int,
-):
+) -> JSONResponse:
     content = MessageResponse(message=str(exception)).dict()
     return JSONResponse(
         status_code=status,

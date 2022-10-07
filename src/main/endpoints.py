@@ -1,7 +1,7 @@
-from typing import List
+from typing import Any, Dict, List
 
 from dependency_injector.wiring import Provide, inject
-from fastapi import APIRouter, Depends, Response, status
+from fastapi import APIRouter, Depends, status
 
 from .containers import Container
 from .repositories import DuplicateTitleError, NoteNotFoundError
@@ -11,14 +11,14 @@ from .services import NoteService
 
 router = APIRouter()
 
-BAD_NOTE_REQUEST_ERROR_RESP = {
+BAD_NOTE_REQUEST_ERROR_RESP: Dict[int | str, Dict[str, Any]] = {
     400: {
         "description": "Bad note request",
         "model": MessageResponse
     }
 }
 
-NOTE_NOT_FOUND_ERROR_RESP = {
+NOTE_NOT_FOUND_ERROR_RESP: Dict[int | str, Dict[str, Any]] = {
     404: {
         "description": "Note note found",
         "model": MessageResponse
